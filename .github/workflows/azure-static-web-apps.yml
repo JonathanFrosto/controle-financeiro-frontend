@@ -16,9 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 🧩 2. Instalação e build do app
       - name: Build App
         run: |
-          npm install
+          echo "🔧 Instalando dependências..."
+          npm ci
+
+          echo "🧪 Mostrando variável (oculta):"
+          echo "Comprimento do valor VITE_FINANCIAL_CONTROL_API: ${#VITE_FINANCIAL_CONTROL_API}"
+
+          echo "🏗️ Rodando build do Vite..."
           npm run build
         env:
           VITE_FINANCIAL_CONTROL_API: ${{ secrets.VITE_FINANCIAL_CONTROL_API }}
