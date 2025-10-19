@@ -39,3 +39,4 @@ jobs:
           app_location: "/"               # pasta do app (ex: "/" ou "frontend")
           output_location: "dist"        # onde está o build (ex: "dist" ou "build")
           skip_api_build: true
+          skip_app_build: true
